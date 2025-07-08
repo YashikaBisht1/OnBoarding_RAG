@@ -1,117 +1,162 @@
+import streamlit as st
 import os
-import sys
-from pathlib import Path
-from dotenv import load_dotenv
-from langchain_groq import ChatGroq
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.vectorstores import Chroma
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from models.qa_manager import QAManager
+from utils.document_processor import process_pdf, add_document_to_knowledge_base
+from config.settings import GRATUITY_DB_PATH, LEAVE_DB_PATH, DATA_DIR
 
-# Load environment variables
-load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
-google_api_key = os.getenv("GOOGLE_API_KEY")
+def initialize_session_state():
+    """Initialize session state variables"""
+    if 'qa_manager' not in st.session_state:
+        st.session_state.qa_manager = QAManager()
+    if 'chat_history' not in st.session_state:
+        st.session_state.chat_history = []
+    if 'uploaded_files' not in st.session_state:
+        st.session_state.uploaded_files = set()
+    if 'show_upload' not in st.session_state:
+        st.session_state.show_upload = True
 
-# Validate API keys
-if not groq_api_key:
-    print("Error: GROQ_API_KEY not found in environment variables.")
-    sys.exit(1)
-
-if not google_api_key:
-    print("Error: GOOGLE_API_KEY not found in environment variables.")
-    sys.exit(1)
-
-os.environ["GOOGLE_API_KEY"] = google_api_key
-
-try:
-    llm = ChatGroq(groq_api_key=groq_api_key, model_name="gemma2-9b-it")
-except Exception as e:
-    print(f"Error initializing ChatGroq: {e}")
-    sys.exit(1)
-
-# Prompt Template
-prompt = ChatPromptTemplate.from_template("""
-You are an AI Resume Evaluator.
-
-<context>
-{context}
-</context>
-
-Based on the above Resume and Job Description, provide:
-1. A FIT SCORE from 0 to 100.
-2. Key strengths match.
-3. Skill gaps or missing experience.
-4. Actionable feedback to improve resume for this job.
-
-Respond in a clear and concise format.
-Questions: {input}
-""")
-
-# Function to create vector store from PDFs
-def create_chroma_vectorstore(resume_pdf, jd_pdf):
-    # Validate file paths
-    if not os.path.exists(resume_pdf):
-        raise FileNotFoundError(f"Resume PDF not found: {resume_pdf}")
-    if not os.path.exists(jd_pdf):
-        raise FileNotFoundError(f"Job Description PDF not found: {jd_pdf}")
-    
+def handle_document_upload(uploaded_file, doc_type):
+    """Handle document upload and processing"""
     try:
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+        # Check if file was already processed
+        if uploaded_file.name in st.session_state.uploaded_files:
+            st.warning(f"'{uploaded_file.name}' was already processed. Each file should only be uploaded once.")
+            return
 
-        resume_docs = PyPDFLoader(resume_pdf).load()
-        jd_docs = PyPDFLoader(jd_pdf).load()
+        # Extract text and create document chunks
+        with st.status("Processing document...", expanded=True) as status:
+            status.write("Extracting text from PDF...")
+            combined_text, docs = process_pdf(uploaded_file, doc_type)
+            
+            # Process document immediately
+            status.write("Adding to knowledge base...")
+            add_document_to_knowledge_base(uploaded_file.name, combined_text)
+            
+            status.write("Creating vector store...")
+            store_path = GRATUITY_DB_PATH if "gratuity" in doc_type.lower() else LEAVE_DB_PATH
+            vectordb, doc_count = st.session_state.qa_manager.vector_store.create_vectorstore(docs, store_path)
+            
+            # Mark file as processed
+            st.session_state.uploaded_files.add(uploaded_file.name)
+            st.session_state.show_upload = False  # Hide upload section after processing
+            
+            # Show preview in expander after processing
+            with st.expander("📄 Document Details", expanded=False):
+                st.text_area("Extracted Content Preview", combined_text[:1000] + "...", height=200)
+                st.write(f"Total chunks created: {doc_count}")
+            
+            status.update(label="✅ Document processed!", state="complete", expanded=False)
+            st.success(f"Successfully processed {uploaded_file.name} into {doc_count} chunks!")
+            st.rerun()
 
-        for doc in resume_docs:
-            doc.metadata["source"] = "Resume"
-        for doc in jd_docs:
-            doc.metadata["source"] = "Job Description"
-
-        all_docs = resume_docs + jd_docs
-        split_docs = text_splitter.split_documents(all_docs)
-
-        vectordb = Chroma.from_documents(split_docs, embeddings, persist_directory="./chroma_store")
-        return vectordb
     except Exception as e:
-        raise Exception(f"Error creating vector store: {e}")
+        st.error(f"Error processing document: {str(e)}")
+        if os.getenv('DEBUG', 'false').lower() == 'true':
+            st.exception(e)
 
+def display_system_status():
+    """Display the current system status"""
+    loaded_dbs = st.session_state.qa_manager.vector_store.load_existing_stores()
+    
+    cols = st.columns(4)
+    with cols[0]:
+        st.write("📚 Gratuity DB:", "✅" if loaded_dbs['gratuity'] else "❌")
+    with cols[1]:
+        st.write("📚 Leave DB:", "✅" if loaded_dbs['leave'] else "❌")
+    with cols[2]:
+        kb_exists = os.path.exists(os.path.join(DATA_DIR, "knowledge_base.json"))
+        st.write("📖 Knowledge Base:", "✅" if kb_exists else "❌")
+    with cols[3]:
+        if st.button("📤 Show/Hide Upload Section"):
+            st.session_state.show_upload = not st.session_state.show_upload
+            st.rerun()
+
+def main():
+    st.set_page_config(
+        page_title="HR Policy Q&A System",
+        page_icon="💼",
+        layout="wide"
+    )
+    
+    initialize_session_state()
+    
+    # Header section
+    st.title("💼 HR Policy Q&A System")
+    
+    # Status bar
+    display_system_status()
+    
+    # Collapsible upload section
+    if st.session_state.show_upload:
+        with st.expander("📤 Document Upload", expanded=True):
+            col1, col2 = st.columns(2)
+            with col1:
+                doc_type = st.selectbox(
+                    "Select Document Type",
+                    ["Gratuity Policy", "Leave Policy"],
+                    help="Choose the type of policy document"
+                )
+            with col2:
+                uploaded_file = st.file_uploader(
+                    f"Upload {doc_type}",
+                    type=["pdf"],
+                    help="Upload a PDF document"
+                )
+            
+            if uploaded_file:
+                handle_document_upload(uploaded_file, doc_type)
+    
+    # Main Q&A interface
+    st.header("💭 Ask Questions About HR Policies")
+    
+    # Question input with better styling
+    question = st.text_input(
+        "Your question:",
+        placeholder="E.g., What are the eligibility criteria for gratuity?",
+        help="Ask any question about the uploaded policies"
+    )
+    
+    col1, col2, col3 = st.columns([2, 1, 1])
+    with col1:
+        if st.button("🔍 Get Answer", type="primary", use_container_width=True):
+            if not question.strip():
+                st.warning("Please enter a question!")
+            else:
+                with st.spinner("Finding answer..."):
+                    try:
+                        answer, source, context = st.session_state.qa_manager.get_answer(question)
+                        
+                        # Display answer in a nice card-like container
+                        st.markdown("### Answer")
+                        st.markdown(f"{answer}")
+                        st.caption(f"Source: {source}")
+                        
+                        # Show context in expander
+                        if context:
+                            with st.expander("👀 View Context", expanded=False):
+                                st.text(context)
+                        
+                        # Add to chat history
+                        st.session_state.chat_history.append({
+                            "question": question,
+                            "answer": answer,
+                            "source": source
+                        })
+                    except Exception as e:
+                        st.error(f"Error getting answer: {str(e)}")
+                        if os.getenv('DEBUG', 'false').lower() == 'true':
+                            st.exception(e)
+    
+    # Chat history with better styling
+    if st.session_state.chat_history:
+        st.markdown("---")
+        st.subheader("📝 Recent Questions")
+        for chat in reversed(st.session_state.chat_history[-5:]):
+            with st.container():
+                st.write("🤔 " + chat['question'])
+                st.write("💡 " + chat['answer'])
+                st.caption(f"Source: {chat['source']}")
+                st.markdown("---")
 
 if __name__ == "__main__":
-    print("=== Resume Evaluation Console App ===")
-    
-    # Get file paths from user
-    resume_path = input("Enter path to Resume PDF: ").strip()
-    jd_path = input("Enter path to Job Description PDF: ").strip()
-    
-    # Validate paths exist
-    if not resume_path or not jd_path:
-        print("Error: Both resume and job description paths are required.")
-        sys.exit(1)
-    
-    # Convert to absolute paths
-    resume_path = os.path.abspath(resume_path)
-    jd_path = os.path.abspath(jd_path)
-    
-    try:
-        vectordb = create_chroma_vectorstore(resume_path, jd_path)
-        retriever = vectordb.as_retriever()
-
-        document_chain = create_stuff_documents_chain(llm, prompt)
-        rag_chain = create_retrieval_chain(retriever, document_chain)
-
-        user_query = "Evaluate this resume against the job description."
-        result = rag_chain.invoke({"input": user_query})
-
-        print("\n=== Evaluation Result ===")
-        print(result["answer"])
-        
-    except FileNotFoundError as e:
-        print(f"File Error: {e}")
-        sys.exit(1)
-    except Exception as e:
-        print(f"Error during evaluation: {e}")
-        sys.exit(1)
+    main()

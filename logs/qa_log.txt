@@ -1,0 +1,290 @@
+2025-07-08 11:21:00,215 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:21:10,548 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:21:10,869 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:21:10,976 - INFO - QA Manager initialized
+2025-07-08 11:23:18,955 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:23:28,175 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:23:28,454 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:23:28,556 - INFO - QA Manager initialized
+2025-07-08 11:27:24,427 - INFO - LLM initialized successfully with model: gemma2-9b-it
+2025-07-08 11:27:24,428 - INFO - Processing question: Can I apply for bereavement leave immediately after joining the company?
+2025-07-08 11:27:24,431 - INFO - Knowledge base loaded successfully
+2025-07-08 11:27:24,457 - INFO - Attempting vector store search
+2025-07-08 11:27:26,107 - INFO - Using fallback with full context
+2025-07-08 11:27:26,110 - INFO - Generating LLM answer
+2025-07-08 11:27:26,669 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 11:27:26,726 - INFO - Answer generated successfully
+2025-07-08 11:33:49,911 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:33:53,905 - INFO - QA Manager initialized
+2025-07-08 11:34:24,149 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:34:27,977 - INFO - QA Manager initialized
+2025-07-08 11:35:55,567 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:36:05,838 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:36:06,058 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:36:06,146 - INFO - QA Manager initialized
+2025-07-08 11:37:56,616 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:38:03,539 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:38:03,703 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:38:03,783 - INFO - QA Manager initialized
+2025-07-08 11:40:05,982 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 11:40:17,206 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:40:17,451 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 11:40:17,546 - INFO - QA Manager initialized
+2025-07-08 12:14:43,006 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:14:51,771 - INFO - QA Manager initialized
+2025-07-08 12:35:26,370 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:35:36,820 - INFO - QA Manager initialized
+2025-07-08 12:36:21,662 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:36:22,239 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:36:22,247 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 12:36:22,247 - INFO - Knowledge base loaded successfully
+2025-07-08 12:36:22,247 - INFO - Extracting meaningful sentences
+2025-07-08 12:36:22,247 - INFO - Extracted 32 meaningful sentences
+2025-07-08 12:36:22,247 - INFO - Knowledge base saved successfully
+2025-07-08 12:36:22,247 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 12:36:22,260 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:36:26,554 - INFO - QA Manager initialized
+2025-07-08 12:38:35,622 - INFO - Knowledge base loaded successfully
+2025-07-08 12:38:35,631 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:38:35,859 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:38:35,867 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 12:38:35,868 - INFO - Knowledge base loaded successfully
+2025-07-08 12:38:35,871 - INFO - Extracting meaningful sentences
+2025-07-08 12:38:35,871 - INFO - Extracted 32 meaningful sentences
+2025-07-08 12:38:35,871 - INFO - Knowledge base saved successfully
+2025-07-08 12:38:35,876 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 12:38:35,881 - INFO - Knowledge base loaded successfully
+2025-07-08 12:38:35,890 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:38:39,686 - INFO - QA Manager initialized
+2025-07-08 12:38:52,842 - INFO - Knowledge base loaded successfully
+2025-07-08 12:38:52,850 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:38:53,163 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:38:53,169 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 12:38:53,175 - INFO - Knowledge base loaded successfully
+2025-07-08 12:38:53,175 - INFO - Extracting meaningful sentences
+2025-07-08 12:38:53,177 - INFO - Extracted 32 meaningful sentences
+2025-07-08 12:38:53,177 - INFO - Knowledge base saved successfully
+2025-07-08 12:38:53,177 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 12:38:53,186 - INFO - Knowledge base loaded successfully
+2025-07-08 12:38:53,194 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:38:57,803 - INFO - QA Manager initialized
+2025-07-08 12:39:13,631 - INFO - Knowledge base loaded successfully
+2025-07-08 12:39:13,640 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:39:13,838 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:39:13,838 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 12:39:13,847 - INFO - Knowledge base loaded successfully
+2025-07-08 12:39:13,847 - INFO - Extracting meaningful sentences
+2025-07-08 12:39:13,851 - INFO - Extracted 32 meaningful sentences
+2025-07-08 12:39:13,855 - INFO - Knowledge base saved successfully
+2025-07-08 12:39:13,857 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 12:39:13,861 - INFO - Knowledge base loaded successfully
+2025-07-08 12:39:13,872 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:39:17,964 - INFO - QA Manager initialized
+2025-07-08 12:40:44,296 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:44,305 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:40:44,506 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:40:44,506 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 12:40:44,516 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:44,517 - INFO - Extracting meaningful sentences
+2025-07-08 12:40:44,518 - INFO - Extracted 32 meaningful sentences
+2025-07-08 12:40:44,521 - INFO - Knowledge base saved successfully
+2025-07-08 12:40:44,521 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 12:40:44,525 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:44,533 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:40:48,387 - INFO - QA Manager initialized
+2025-07-08 12:40:58,360 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:58,380 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:40:58,615 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:58,688 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 12:40:58,704 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:40:59,280 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 12:40:59,288 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 12:40:59,290 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:59,291 - INFO - Extracting meaningful sentences
+2025-07-08 12:40:59,291 - INFO - Extracted 32 meaningful sentences
+2025-07-08 12:40:59,296 - INFO - Knowledge base saved successfully
+2025-07-08 12:40:59,297 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 12:40:59,305 - INFO - Knowledge base loaded successfully
+2025-07-08 12:40:59,316 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 12:41:03,644 - INFO - QA Manager initialized
+2025-07-08 12:41:03,684 - ERROR - GROQ_API_KEY not found in environment variables
+2025-07-08 12:41:03,688 - ERROR - Error initializing LLM: GROQ_API_KEY not found in environment variables
+2025-07-08 12:41:03,691 - ERROR - Failed to initialize LLM
+2025-07-08 13:01:11,254 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:11,262 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 13:01:11,265 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:11,267 - INFO - Document type determined: leave
+2025-07-08 13:01:11,270 - INFO - Extracting text from PDF
+2025-07-08 13:01:11,487 - INFO - Splitting document into chunks
+2025-07-08 13:01:11,487 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 13:01:11,487 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:01:11,487 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 13:01:11,487 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:11,498 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:11,501 - INFO - Document type determined: leave
+2025-07-08 13:01:11,501 - INFO - Extracting meaningful sentences
+2025-07-08 13:01:11,501 - INFO - Extracted 32 meaningful sentences
+2025-07-08 13:01:11,503 - INFO - Knowledge base saved successfully
+2025-07-08 13:01:11,507 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 13:01:11,538 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:11,546 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 13:01:16,478 - INFO - QA Manager initialized
+2025-07-08 13:01:29,659 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:29,678 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 13:01:29,680 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:29,680 - INFO - Document type determined: leave
+2025-07-08 13:01:29,683 - INFO - Extracting text from PDF
+2025-07-08 13:01:29,857 - INFO - Splitting document into chunks
+2025-07-08 13:01:29,859 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 13:01:29,860 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:01:29,868 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 13:01:29,870 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:29,870 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:29,872 - INFO - Document type determined: leave
+2025-07-08 13:01:29,873 - INFO - Extracting meaningful sentences
+2025-07-08 13:01:29,873 - INFO - Extracted 32 meaningful sentences
+2025-07-08 13:01:29,878 - INFO - Knowledge base saved successfully
+2025-07-08 13:01:29,880 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 13:01:29,888 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:29,899 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 13:01:34,513 - INFO - QA Manager initialized
+2025-07-08 13:01:44,110 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:44,115 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 13:01:44,118 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:44,122 - INFO - Document type determined: leave
+2025-07-08 13:01:44,127 - INFO - Extracting text from PDF
+2025-07-08 13:01:44,318 - INFO - Splitting document into chunks
+2025-07-08 13:01:44,320 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 13:01:44,322 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:01:44,324 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 13:01:44,328 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:44,328 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:44,328 - INFO - Document type determined: leave
+2025-07-08 13:01:44,328 - INFO - Extracting meaningful sentences
+2025-07-08 13:01:44,328 - INFO - Extracted 32 meaningful sentences
+2025-07-08 13:01:44,336 - INFO - Knowledge base saved successfully
+2025-07-08 13:01:44,337 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 32 sentences
+2025-07-08 13:01:44,337 - INFO - Knowledge base loaded successfully
+2025-07-08 13:01:44,344 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 13:01:48,409 - INFO - QA Manager initialized
+2025-07-08 13:01:48,417 - ERROR - GROQ_API_KEY not found in environment variables
+2025-07-08 13:01:48,429 - ERROR - Error initializing LLM: GROQ_API_KEY not found in environment variables
+2025-07-08 13:01:48,431 - ERROR - Failed to initialize LLM
+2025-07-08 13:50:08,428 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 13:50:16,144 - INFO - QA Manager initialized
+2025-07-08 13:50:35,953 - INFO - Processing PDF file: Gratuity_Policy_2025.pdf
+2025-07-08 13:50:35,954 - INFO - Document type determined: Gratuity Policy
+2025-07-08 13:50:35,960 - INFO - Extracting text from PDF
+2025-07-08 13:50:36,422 - INFO - Splitting document into chunks
+2025-07-08 13:50:36,425 - INFO - PDF processed successfully: 2 chunks created
+2025-07-08 13:50:36,428 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:51:16,069 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 13:51:16,071 - INFO - Document type determined: Leave Policy
+2025-07-08 13:51:16,075 - INFO - Extracting text from PDF
+2025-07-08 13:51:16,273 - INFO - Splitting document into chunks
+2025-07-08 13:51:16,273 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 13:51:16,273 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:54:07,183 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 13:54:07,183 - INFO - Document type determined: Leave Policy
+2025-07-08 13:54:07,187 - INFO - Extracting text from PDF
+2025-07-08 13:54:07,399 - INFO - Splitting document into chunks
+2025-07-08 13:54:07,399 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 13:54:07,399 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:54:07,410 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 13:54:07,411 - INFO - Knowledge base loaded successfully
+2025-07-08 13:54:07,414 - INFO - Knowledge base loaded successfully
+2025-07-08 13:54:07,414 - INFO - Document type determined: leave
+2025-07-08 13:54:07,414 - INFO - Extracting meaningful sentences
+2025-07-08 13:54:07,414 - INFO - Extracted 1 meaningful sentences
+2025-07-08 13:54:07,418 - INFO - Knowledge base saved successfully
+2025-07-08 13:54:07,418 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 1 sentences
+2025-07-08 13:54:08,394 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 13:54:30,224 - INFO - Processing PDF file: Gratuity_Policy_2025.pdf
+2025-07-08 13:54:30,226 - INFO - Document type determined: Gratuity Policy
+2025-07-08 13:54:30,228 - INFO - Extracting text from PDF
+2025-07-08 13:54:30,328 - INFO - Splitting document into chunks
+2025-07-08 13:54:30,328 - INFO - PDF processed successfully: 2 chunks created
+2025-07-08 13:54:30,328 - INFO - Temporary PDF file cleaned up
+2025-07-08 13:54:30,336 - INFO - Adding document to knowledge base: Gratuity_Policy_2025.pdf
+2025-07-08 13:54:30,336 - INFO - Knowledge base loaded successfully
+2025-07-08 13:54:30,340 - INFO - Knowledge base loaded successfully
+2025-07-08 13:54:30,340 - INFO - Document type determined: gratuity
+2025-07-08 13:54:30,342 - INFO - Extracting meaningful sentences
+2025-07-08 13:54:30,342 - INFO - Extracted 0 meaningful sentences
+2025-07-08 13:54:30,345 - INFO - Knowledge base saved successfully
+2025-07-08 13:54:30,345 - INFO - Document Gratuity_Policy_2025.pdf added to knowledge base with 0 sentences
+2025-07-08 13:54:30,352 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 13:54:43,194 - INFO - LLM initialized successfully with model: gemma2-9b-it
+2025-07-08 13:54:43,195 - INFO - Processing question: Can I apply for bereavement leave immediately after joining the company?
+2025-07-08 13:54:43,197 - INFO - Knowledge base loaded successfully
+2025-07-08 13:54:43,197 - INFO - Attempting vector store search
+2025-07-08 13:54:43,615 - INFO - Using fallback with full context
+2025-07-08 13:54:43,618 - INFO - Generating LLM answer
+2025-07-08 13:54:44,528 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 13:54:44,549 - INFO - Answer generated successfully
+2025-07-08 14:01:47,954 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-08 14:01:55,955 - INFO - QA Manager initialized
+2025-07-08 14:02:19,099 - INFO - Processing PDF file: Gratuity_Policy_2025.pdf
+2025-07-08 14:02:19,104 - INFO - Attempting PyPDF extraction...
+2025-07-08 14:02:19,607 - INFO - Successfully extracted 1 pages with PyPDF
+2025-07-08 14:02:19,609 - INFO - Content preview: Gratuity Policy    As per company norms and aligned with the Payment of Gratuity  Act, gratuity is considered a statutory benefit provided to  employees who have completed a minimum of 5 years of  con...
+2025-07-08 14:02:19,618 - INFO - Splitting document into chunks
+2025-07-08 14:02:19,622 - INFO - PDF processed successfully: 2 chunks created
+2025-07-08 14:02:19,629 - INFO - Adding document to knowledge base: Gratuity_Policy_2025.pdf
+2025-07-08 14:02:19,635 - INFO - Knowledge base loaded successfully
+2025-07-08 14:02:19,638 - INFO - Document type determined: gratuity
+2025-07-08 14:02:19,640 - INFO - Document text length: 838 characters
+2025-07-08 14:02:19,641 - INFO - Preview of first 200 chars: Gratuity Policy 
+ 
+As per company norms and aligned with the Payment of Gratuity 
+Act, gratuity is considered a statutory benefit provided to 
+employees who have completed a minimum of 5 years of 
+con...
+2025-07-08 14:02:19,648 - INFO - Extracting meaningful sentences
+2025-07-08 14:02:19,653 - INFO - Extracted 4 meaningful sentences
+2025-07-08 14:02:19,777 - INFO - Knowledge base saved successfully
+2025-07-08 14:02:19,785 - INFO - Document Gratuity_Policy_2025.pdf added to knowledge base with 4 valid sentences
+2025-07-08 14:02:21,439 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 14:02:42,565 - INFO - Processing PDF file: Company Leave Policy_25.pdf
+2025-07-08 14:02:42,570 - INFO - Attempting PyPDF extraction...
+2025-07-08 14:02:42,920 - INFO - Successfully extracted 2 pages with PyPDF
+2025-07-08 14:02:42,926 - INFO - Content preview: Company Leave Policy    Paid Leave Policy   1. Employees receive 1.5 days of paid leave per month, totalling 18 days annually (Jan– Dec 2025).  2. Leave accrues monthly and must be consumed within the...
+2025-07-08 14:02:42,926 - INFO - Splitting document into chunks
+2025-07-08 14:02:42,928 - INFO - PDF processed successfully: 5 chunks created
+2025-07-08 14:02:42,931 - INFO - Adding document to knowledge base: Company Leave Policy_25.pdf
+2025-07-08 14:02:42,934 - INFO - Knowledge base loaded successfully
+2025-07-08 14:02:42,936 - INFO - Document type determined: leave
+2025-07-08 14:02:42,938 - INFO - Document text length: 2037 characters
+2025-07-08 14:02:42,939 - INFO - Preview of first 200 chars: Company Leave Policy 
+ 
+Paid Leave Policy  
+1. Employees receive 1.5 days of paid leave per month, totalling 18 days annually (Jan–
+Dec 2025). 
+2. Leave accrues monthly and must be consumed within the...
+2025-07-08 14:02:42,939 - INFO - Extracting meaningful sentences
+2025-07-08 14:02:42,940 - INFO - Extracted 28 meaningful sentences
+2025-07-08 14:02:42,953 - INFO - Knowledge base saved successfully
+2025-07-08 14:02:42,955 - INFO - Document Company Leave Policy_25.pdf added to knowledge base with 28 valid sentences
+2025-07-08 14:02:42,965 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-08 14:02:50,916 - INFO - LLM initialized successfully with model: gemma2-9b-it
+2025-07-08 14:02:50,916 - INFO - Processing question: Can I apply for bereavement leave immediately after joining the company?
+2025-07-08 14:02:50,922 - INFO - Knowledge base loaded successfully
+2025-07-08 14:02:50,932 - INFO - Attempting vector store search
+2025-07-08 14:02:51,342 - INFO - Using fallback with full context
+2025-07-08 14:02:51,347 - INFO - Generating LLM answer
+2025-07-08 14:02:51,948 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 14:02:51,982 - INFO - Answer generated successfully
+2025-07-08 14:03:16,986 - INFO - Processing question: if someone dies in my family do i get a paid leave
+2025-07-08 14:03:16,987 - INFO - Knowledge base loaded successfully
+2025-07-08 14:03:17,001 - INFO - Attempting vector store search
+2025-07-08 14:03:17,284 - INFO - Using fallback with full context
+2025-07-08 14:03:17,284 - INFO - Generating LLM answer
+2025-07-08 14:03:17,956 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 14:03:17,956 - INFO - Answer generated successfully
+2025-07-08 14:09:32,430 - INFO - Processing question: if someone dies in my family do i get a paid leave
+2025-07-08 14:09:32,433 - INFO - Knowledge base loaded successfully
+2025-07-08 14:09:32,444 - INFO - Attempting vector store search
+2025-07-08 14:09:32,688 - INFO - Using fallback with full context
+2025-07-08 14:09:32,688 - INFO - Generating LLM answer
+2025-07-08 14:09:33,658 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-08 14:09:33,660 - INFO - Answer generated successfully
