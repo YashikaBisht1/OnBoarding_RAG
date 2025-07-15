@@ -4,9 +4,7 @@
     "sentences": [
       {
         "line_no": 1,
-        "text": "Gratuity Policy As per company norms and aligned with the Payment of Gratuity Act, gratuity is considered a statutory benefit provided to employees who have completed a minimum of 5 years of continuous service with the organization.",
-        "length": 232,
-        "word_count": 37
+        "text": "Gratuity Policy As per company norms and aligned with the Payment of Gratuity Act, gratuity is considered a statutory benefit provided to employees who have completed a minimum of 5 years of continuous service with the organization."
       },
       {
         "line_no": 2,
@@ -212,5 +210,118 @@
       "processed_date": "2025-07-08T14:02:42.944205",
       "original_length": 2037
     }
+  },
+  "Upskilling_and_Continuous_Learning_Policy.pdf": {
+    "doc_type": "leave",
+    "sentences": [
+      {
+        "line_no": 1,
+        "text": "Upskilling and Continuous Learning Policy Prismberry Technologies Private Limited https://www."
+      },
+      {
+        "line_no": 2,
+        "text": "com Purpose To foster a culture of continuous learning and professional growth, this policy mandates a structured upskilling program for all engineering employees."
+      },
+      {
+        "line_no": 3,
+        "text": "The program is designed to enhance technical competencies and soft skills, ensuring that our workforce stays competitive in the dynamic technology landscape."
+      },
+      {
+        "line_no": 4,
+        "text": "Scope This policy applies to all full-time employees within the engineering function across levels and designations."
+      },
+      {
+        "line_no": 5,
+        "text": "Policy Overview ● Technical Courses: ○ Each engineering employee is required to complete at least one technical course every quarter ."
+      },
+      {
+        "line_no": 6,
+        "text": "● Soft Skill Courses: ○ Each engineering employee is required to complete at least one soft skill course every six months ."
+      },
+      {
+        "line_no": 7,
+        "text": "Budget Allocation A budget will be allocated to each employee based on their designation for both technical and soft skill courses."
+      },
+      {
+        "line_no": 8,
+        "text": "This budget covers course fees, and any expenses incurred over the allocated amount will not be reimbursed unless approved in advance by the employee’s direct supervisor."
+      },
+      {
+        "line_no": 9,
+        "text": "Designation Quarterly Tech Course Budget Biannual Soft Skill Course Budget Junior Engineer Rs."
+      },
+      {
+        "line_no": 10,
+        "text": "com Eligible Courses ● Technical Courses: Courses should focus on skills related to the employee's role or future career development, such as AI skills, programming languages, cloud technologies, DevOps, architecture, security, etc."
+      },
+      {
+        "line_no": 11,
+        "text": "● Soft Skill Courses: Courses that enhance communication, leadership, teamwork, time management, conflict resolution, and other interpersonal skills."
+      },
+      {
+        "line_no": 12,
+        "text": "● Courses must be taken from recognized platforms or training providers (e."
+      },
+      {
+        "line_no": 13,
+        "text": ", Coursera, Udemy, edX, LinkedIn Learning) or any provider pre-approved by the organization."
+      },
+      {
+        "line_no": 14,
+        "text": "● Free courses may be accepted if accompanied by a verified certificate."
+      },
+      {
+        "line_no": 15,
+        "text": "Reimbursement Process ● Employees must submit proof of course completion and a tax invoice/receipt within 30 days of completing the course."
+      },
+      {
+        "line_no": 16,
+        "text": "● Reimbursements should be submitted through the company’s expense management portal and will be processed within standard reimbursement timelines."
+      },
+      {
+        "line_no": 17,
+        "text": "● Course expenses must fall within the allotted budget unless pre-approved."
+      },
+      {
+        "line_no": 18,
+        "text": "Performance Evaluation ● Successful completion of the required courses will be factored into the employee's performance evaluation ."
+      },
+      {
+        "line_no": 19,
+        "text": "● The completion rate, relevance of the courses, and application of the skills acquired will contribute to both annual performance reviews and promotion considerations ."
+      },
+      {
+        "line_no": 20,
+        "text": "Non-Compliance ● Failure to complete the required courses within the specified timeframes will be reflected in performance reviews."
+      },
+      {
+        "line_no": 21,
+        "text": "● If an employee consistently fails to meet the upskilling requirements, this may result in a discussion with management and affect eligibility for bonuses, salary increments, or promotions."
+      },
+      {
+        "line_no": 22,
+        "text": "Flexibility & Exceptions Prismberry Technologies Private Limited https://www."
+      },
+      {
+        "line_no": 23,
+        "text": "com ● For high-value, leadership-oriented soft skill programs exceeding the budget, once-a-year exceptions may be granted with prior approval from the employee’s manager and HR."
+      },
+      {
+        "line_no": 24,
+        "text": "● Internal trainings/workshops can substitute for external courses if formally recognized by HR Additional Guidelines ● The HR team will maintain a recommended course directory and support employees in course selection."
+      },
+      {
+        "line_no": 25,
+        "text": "● Employees are encouraged to discuss course options with their supervisors to align the chosen courses with their current role and career growth aspirations."
+      },
+      {
+        "line_no": 26,
+        "text": "● Requests for course recommendations or approvals outside of the recognized platforms should be directed to the HR team."
+      },
+      {
+        "line_no": 27,
+        "text": "Support & Resources For any questions or support related to this policy, please contact the HR team Prismberry Technologies Private Limited https://www."
+      }
+    ]
   }
 }

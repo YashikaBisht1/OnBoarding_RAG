@@ -21,6 +21,7 @@ LOG_FILE = str(LOGS_DIR / "qa_log.txt")
 # Vector DB paths
 GRATUITY_DB_PATH = str(BASE_DIR / "document_chroma_store_gratuity")
 LEAVE_DB_PATH = str(BASE_DIR / "document_chroma_store_leave")
+UPSKILLING_DB_PATH = str(BASE_DIR / "document_chroma_store_upskilling")
 
 # Text splitting settings
 CHUNK_SIZE = 500  # Smaller chunks for better context
@@ -33,7 +34,7 @@ MAX_TOKENS = 2048  # Maximum response length
 
 # Retrieval settings
 TOP_K_MATCHES = 3  # Number of similar documents to retrieve
-SIMILARITY_THRESHOLD = 0.6  # Minimum similarity score for matches
+SIMILARITY_THRESHOLD = -1.0  # Minimum similarity score for matches (allowing negative scores)
 
 # Logging settings
 LOG_LEVEL = "INFO"

@@ -2,6 +2,7 @@ import json
 import tempfile
 import logging
 import re
+import os
 from datetime import datetime
 from typing import List, Tuple
 from langchain.schema import Document
@@ -129,26 +130,18 @@ def add_document_to_knowledge_base(doc_name: str, doc_text: str):
         if not valid_sentences:
             raise ValueError("No valid sentences after filtering")
             
-        # Create numbered sentences list with additional metadata
+        # Create simple numbered sentences list
         numbered_sentences = []
         for idx, sentence in enumerate(valid_sentences, 1):
             numbered_sentences.append({
                 "line_no": idx,
-                "text": sentence,
-                "length": len(sentence),
-                "word_count": len(sentence.split())
+                "text": sentence
             })
         
-        # Store in knowledge base with metadata
+        # Store in knowledge base with minimal structure
         kb[doc_name] = {
             "doc_type": doc_type,
-            "sentences": numbered_sentences,
-            "metadata": {
-                "total_sentences": len(numbered_sentences),
-                "average_sentence_length": sum(s["length"] for s in numbered_sentences) / len(numbered_sentences),
-                "processed_date": datetime.now().isoformat(),
-                "original_length": len(doc_text)
-            }
+            "sentences": numbered_sentences
         }
         
         save_knowledge_base(kb)
@@ -268,5 +261,79 @@ def process_pdf(uploaded_file, doc_type: str) -> Tuple[str, List[Document]]:
             
     except Exception as e:
         error_msg = f"Error processing PDF: {str(e)}"
+        logging.error(error_msg)
+        raise RuntimeError(error_msg)
+
+def process_pdf_from_path(file_path: str, doc_type: str) -> Tuple[str, List[Document]]:
+    """Process a PDF file from file path and return its text content and document chunks"""
+    logging.info(f"Processing PDF file from path: {file_path}")
+    
+    # Validate input file
+    if not os.path.exists(file_path):
+        raise ValueError(f"File not found: {file_path}")
+        
+    if not file_path.lower().endswith('.pdf'):
+        raise ValueError("File must be a PDF")
+    
+    # Configure text splitter for better chunking
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=CHUNK_SIZE,
+        chunk_overlap=CHUNK_OVERLAP,
+        length_function=len,
+        separators=["\n\n", "\n", ". ", "? ", "! ", " ", ""]  # Added spaces after punctuation
+    )
+    
+    try:
+        # Load PDF using PyPDFLoader
+        loader = PyPDFLoader(file_path)
+        pages = loader.load()
+        
+        # Combine all pages into single text
+        combined_text = ""
+        for page in pages:
+            page_text = page.page_content.strip()
+            if page_text:
+                combined_text += page_text + "\n\n"
+        
+        if not combined_text.strip():
+            raise ValueError("No text content extracted from PDF")
+        
+        # Create Document objects for text splitting
+        documents = [Document(
+            page_content=combined_text,
+            metadata={
+                "source": os.path.basename(file_path),
+                "doc_type": doc_type,
+                "total_pages": len(pages),
+                "extraction_date": datetime.now().isoformat()
+            }
+        )]
+        
+        # Split into chunks
+        split_docs = text_splitter.split_documents(documents)
+        
+        if not split_docs:
+            raise ValueError("Document splitting produced no chunks")
+            
+        # Log chunk information
+        for i, doc in enumerate(split_docs):
+            logging.debug(f"Chunk {i+1} size: {len(doc.page_content)} chars")
+            logging.debug(f"Chunk {i+1} preview: {doc.page_content[:100]}...")
+        
+        # Add metadata
+        for doc in split_docs:
+            doc.metadata.update({
+                "source": os.path.basename(file_path),
+                "doc_type": doc_type,
+                "chunk_size": len(doc.page_content),
+                "extraction_date": datetime.now().isoformat(),
+                "chunk_word_count": len(doc.page_content.split())
+            })
+        
+        logging.info(f"PDF processed successfully: {len(split_docs)} chunks created")
+        return combined_text.strip(), split_docs
+        
+    except Exception as e:
+        error_msg = f"Error processing PDF from path: {str(e)}"
         logging.error(error_msg)
         raise RuntimeError(error_msg)
