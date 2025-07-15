@@ -48,14 +48,3 @@ streamlit run app.py
 - `Documents_Policies/` — Folder for HR policy documents
 - `requirements.txt` — Python dependencies
 
-## Contributing
-Contributions are welcome! Please fork the repo and submit a pull request. For major changes, open an issue first to discuss what you would like to change.
-
-## License
-MIT
-
-## Contact
-Maintained by [yashika-005](https://github.com/yashika-005).
-
----
-This project is designed to streamline HR onboarding and policy Q&A using state-of-the-art AI and RAG techniques.
