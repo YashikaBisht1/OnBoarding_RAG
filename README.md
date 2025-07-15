@@ -49,4 +49,6 @@ streamlit run app.py
 - `requirements.txt` — Python dependencies
 ## Demo
 <img width="1071" height="830" alt="Screenshot 2025-07-14 123350" src="https://github.com/user-attachments/assets/a4a64231-f8fb-4a5f-be7f-e809329210de" />
+<img width="1506" height="731" alt="Screenshot 2025-07-09 124427" src="https://github.com/user-attachments/assets/7ac56832-7887-4f72-a398-3842c3d6fd33" />
+
 
