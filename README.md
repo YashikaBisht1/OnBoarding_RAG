@@ -47,4 +47,6 @@ streamlit run app.py
 - `utils/` — Document processing utilities
 - `Documents_Policies/` — Folder for HR policy documents
 - `requirements.txt` — Python dependencies
+## Demo
+<img width="1071" height="830" alt="Screenshot 2025-07-14 123350" src="https://github.com/user-attachments/assets/a4a64231-f8fb-4a5f-be7f-e809329210de" />
 
